@@ -1,46 +1,67 @@
 import Avatar from "../Avatar";
+import Comment from "../Comment";
 
-import { Container, Content, Hashtags, Divider } from "./styles";
+import {
+  Container,
+  Header,
+  AutorInfo,
+  Content,
+  Hashtags,
+  Divider,
+  CommentForm,
+  Comments,
+  Autor,
+} from "./styles";
 
 const Post: React.FC = () => {
   return (
     <Container>
-      <header>
-        <div>
+      <Header>
+        <Autor>
           <Avatar />
 
-          <section>
+          <AutorInfo>
             <h1>Chatton Rousse</h1>
             <p>gecandido13@gmail.com</p>
-          </section>
-        </div>
+          </AutorInfo>
+        </Autor>
 
-        <p>Publicado á 1h</p>
-      </header>
+        <time>Publicado á 1h</time>
+      </Header>
 
-      <main>
-        <Content>
+      <Content>
+        <main>
           <p>
-            - Que os emocionados, verdadeiros e de coração puro, se encontrem e
-            vivam histórias únicas e recíprocas!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, eum
+            magnam adipisci voluptas, praesentium ipsam asperiores inventore
+            placeat in est illum cupiditate? Ex dignissimos accusantium
+            reiciendis, repellat impedit consequuntur hic!!!🎆
           </p>
-        </Content>
+        </main>
 
         <Hashtags>
           <span>#collabspace </span>
           <span>#confia</span>
+          <span>#LÁELE</span>
+          <span>Tchaau</span>
         </Hashtags>
-      </main>
+      </Content>
 
       <Divider />
 
-      <footer>
+      <CommentForm>
         <h1>Deixe seu cometário</h1>
 
         <textarea name="" id="" rows={5}></textarea>
 
         <button>Comentar</button>
-      </footer>
+      </CommentForm>
+
+      <Divider />
+
+      <Comments>
+        <Comment />
+      </Comments>
     </Container>
   );
 };
