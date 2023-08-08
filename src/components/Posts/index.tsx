@@ -6,6 +6,7 @@ import {
   Header,
   AutorInfo,
   Content,
+  Description,
   Hashtags,
   Divider,
   CommentForm,
@@ -30,20 +31,20 @@ const Post: React.FC = () => {
       </Header>
 
       <Content>
-        <main>
+        <Description>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, eum
             magnam adipisci voluptas, praesentium ipsam asperiores inventore
             placeat in est illum cupiditate? Ex dignissimos accusantium
             reiciendis, repellat impedit consequuntur hic!!!🎆
           </p>
-        </main>
+        </Description>
 
         <Hashtags>
           <span>#collabspace </span>
           <span>#confia</span>
           <span>#LÁELE</span>
-          <span>Tchaau</span>
+          <span>#Tchaau</span>
         </Hashtags>
       </Content>
 

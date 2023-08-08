@@ -9,7 +9,7 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
 
-  h1 {
-    color: var(--white);
+  img {
+    width: 3.5rem;
   }
 `;
