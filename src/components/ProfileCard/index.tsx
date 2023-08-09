@@ -1,27 +1,39 @@
-import { ButtonEdit, Container, Cover, Divider } from "./styles";
+import {
+  Container,
+  Header,
+  Cover,
+  Content,
+  Divider,
+  ButtonEdit,
+  Footer,
+} from "./styles";
 
 import Avatar from "../Avatar";
 
 const ProfileCard: React.FC = () => {
   return (
     <Container>
-      <header>
+      <Header>
         <Cover src="https://free4kwallpapers.com/uploads/originals/2021/02/04/future-tech-city-wallpaper.jpg" />
 
         <div>
-          <Avatar />
+          <Avatar
+            src="https://i.pinimg.com/474x/0b/d9/31/0bd9310126c6ea1044fef9be5e53dd1f.jpg"
+            borderEffect
+          />
         </div>
-      </header>
+      </Header>
 
-      <main>
+      <Content>
         <h1>Chatton Rousse</h1>
         <p>gecandido13@gmail.com</p>
-      </main>
+      </Content>
 
       <Divider />
-      <footer>
+
+      <Footer>
         <ButtonEdit>Editar seu perfil</ButtonEdit>
-      </footer>
+      </Footer>
     </Container>
   );
 };

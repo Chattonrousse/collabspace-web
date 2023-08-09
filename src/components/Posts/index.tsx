@@ -4,14 +4,16 @@ import Comment from "../Comment";
 import {
   Container,
   Header,
+  Autor,
   AutorInfo,
   Content,
   Description,
   Hashtags,
   Divider,
   CommentForm,
+  ButtonComment,
   Comments,
-  Autor,
+  Inputarea,
 } from "./styles";
 
 const Post: React.FC = () => {
@@ -19,11 +21,14 @@ const Post: React.FC = () => {
     <Container>
       <Header>
         <Autor>
-          <Avatar />
+          <Avatar
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtcY4JEsEOilNZnIPJ_Ot89c7anQ5_PA4RA6TgN4d0R8gFdVZutjuiSAreU8LUposuBNE&usqp=CAU"
+            borderEffect
+          />
 
           <AutorInfo>
-            <h1>Chatton Rousse</h1>
-            <p>gecandido13@gmail.com</p>
+            <h1>Dudy</h1>
+            <p>dudygirl@gmail.com</p>
           </AutorInfo>
         </Autor>
 
@@ -53,9 +58,9 @@ const Post: React.FC = () => {
       <CommentForm>
         <h1>Deixe seu cometário</h1>
 
-        <textarea name="" id="" rows={5}></textarea>
+        <Inputarea name="" id="" rows={5}></Inputarea>
 
-        <button>Comentar</button>
+        <ButtonComment>Comentar</ButtonComment>
       </CommentForm>
 
       <Divider />
