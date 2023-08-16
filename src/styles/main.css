@@ -14,7 +14,7 @@
 
   --emerald-500: #10b981;
   --emerald-600: #059669;
-  --emerald-800: #065f46; 
+  --emerald-800: #065f46;
 
   --red-500: #ef4444;
 }
@@ -30,7 +30,8 @@ body, input, textarea, button {
 
   -webkit-font-smoothing: antialiased;
 }
-/* Custom scrollbar body*/
+
+/* Custom scrollbar body */
 body {
   overflow-x: hidden;
 }
@@ -45,10 +46,9 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar {
   width: 0.5rem;
-
 }
 
-/*Custom scrollbar textarea*/
+/* Custom scrollbar textarea */
 textarea {
   overflow-x: hidden;
 }

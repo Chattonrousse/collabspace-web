@@ -1,7 +1,7 @@
-import { css, styled } from "styled-components";
+import { styled, css } from "styled-components";
 
 interface CommentAreaProps {
-  commentArea: boolean;
+  $commentArea: boolean;
 }
 
 export const Container = styled.div`
@@ -9,10 +9,6 @@ export const Container = styled.div`
   padding: 40px;
   background: var(--zinc-800);
   border-radius: 8px;
-
-  main {
-    margin-top: 1.5rem;
-  }
 `;
 
 export const Header = styled.header`
@@ -20,39 +16,18 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  div {
-    display: flex;
-    gap: 1rem;
-
-    section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      h1 {
-        font-size: 1rem;
-        color: var(--zinc-200);
-      }
-
-      p {
-        font-size: 0%.875rem;
-        color: var(--zinc-500);
-      }
-    }
-  }
-
   time {
     font-size: 0.875rem;
     color: var(--zinc-500);
   }
 `;
 
-export const Autor = styled.div`
+export const Author = styled.div`
   display: flex;
   gap: 1rem;
 `;
 
-export const AutorInfo = styled.section`
+export const AuthorInfo = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +38,7 @@ export const AutorInfo = styled.section`
   }
 
   p {
-    font-size: 0%.875rem;
+    font-size: 0.875rem;
     color: var(--zinc-500);
   }
 `;
@@ -104,8 +79,8 @@ export const Hashtags = styled.div`
 export const Divider = styled.div`
   width: 100%;
   height: 1px;
-  margin: 2rem 0;
   background: var(--zinc-700);
+  margin: 2rem 0;
 `;
 
 export const Interactions = styled.div`
@@ -116,7 +91,7 @@ export const Interactions = styled.div`
   margin-top: 2rem;
 `;
 
-export const InteractionsInfo = styled.div`
+export const InteractionInfo = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -182,14 +157,14 @@ export const ButtonAction = styled.button`
 export const CommentArea = styled.div<CommentAreaProps>`
   margin-top: 2rem;
 
-  ${({ commentArea }) =>
-    commentArea &&
+  ${({ $commentArea }) =>
+    !$commentArea &&
     css`
       display: none;
     `}
 `;
 
-export const CommentForm = styled.div`
+export const CommentForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;

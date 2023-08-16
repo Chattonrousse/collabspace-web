@@ -7,16 +7,16 @@ const Login: React.FC = () => {
         <h1>Entrar</h1>
 
         <Group>
-          <Label htmlFor="">Endereço de e-mail:</Label>
-          <Input type="" placeholder="Digite seu e-mail..." />
+          <Label htmlFor="">Endereço de e-mail</Label>
+          <Input type="text" placeholder="Digite seu e-mail" />
         </Group>
 
         <Group>
           <Label htmlFor="">Sua senha secreta</Label>
-          <Input type="text" placeholder="Digite sua senha..." />
+          <Input type="password" placeholder="Digite sua senha" />
         </Group>
 
-        <Button>Fazer Login</Button>
+        <Button>Fazer login</Button>
       </Form>
     </Container>
   );

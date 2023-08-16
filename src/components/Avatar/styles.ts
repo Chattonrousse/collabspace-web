@@ -1,7 +1,7 @@
 import { styled, css } from "styled-components";
 
 interface ContainerProps {
-  borderEffect?: boolean;
+  $borderEffect?: boolean;
 }
 
 export const Container = styled.img<ContainerProps>`
@@ -9,14 +9,14 @@ export const Container = styled.img<ContainerProps>`
   height: 56px;
   min-width: 56px;
   min-height: 56px;
-  background-color: white;
+  background: white;
   border-radius: 6px;
   object-fit: cover;
 
-  ${({ borderEffect }) =>
-    borderEffect &&
+  ${({ $borderEffect }) =>
+    $borderEffect &&
     css`
       border: 3px solid var(--zinc-800);
-      box-shadow: 0 0 1px 2px var(--emerald-500);
+      box-shadow: 0px 0px 1px 2px var(--emerald-500);
     `}
 `;

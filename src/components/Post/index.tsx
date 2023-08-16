@@ -2,20 +2,20 @@ import { ThumbsUp, ChatCircleText } from "phosphor-react";
 
 import Avatar from "../Avatar";
 import Comment from "../Comment";
-import Inputarea from "../InputArea";
+import InputArea from "../InputArea";
 import Button from "../Button";
 
 import {
   Container,
   Header,
-  Autor,
-  AutorInfo,
+  Author,
+  AuthorInfo,
   Content,
   Description,
   Hashtags,
   Divider,
   Interactions,
-  InteractionsInfo,
+  InteractionInfo,
   CountReaction,
   CountComment,
   InteractionAction,
@@ -36,41 +36,39 @@ const Post: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Autor>
+        <Author>
           <Avatar
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtcY4JEsEOilNZnIPJ_Ot89c7anQ5_PA4RA6TgN4d0R8gFdVZutjuiSAreU8LUposuBNE&usqp=CAU"
+            src="https://b.fssta.com/uploads/application/soccer/headshots/713.png"
             borderEffect
           />
 
-          <AutorInfo>
-            <h1>Dudy</h1>
-            <p>dudygirl@gmail.com</p>
-          </AutorInfo>
-        </Autor>
+          <AuthorInfo>
+            <h1>Neymar Jr</h1>
+            <p>ney@hotney.com</p>
+          </AuthorInfo>
+        </Author>
 
-        <time>Publicado á 1h</time>
+        <time>Publicado à 1h</time>
       </Header>
 
       <Content>
         <Description>
+          <p>Fala galeraa 👋</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, eum
-            magnam adipisci voluptas, praesentium ipsam asperiores inventore
-            placeat in est illum cupiditate? Ex dignissimos accusantium
-            reiciendis, repellat impedit consequuntur hic!!!🎆
+            Você pode sempre sonhar, e seus sonhos se tornarão sonhos, e a
+            realidade se tornará realidade. Mas é você que tem que torná-los
+            realidade. 🚀
           </p>
         </Description>
 
         <Hashtags>
-          <span>#collabspace </span>
+          <span>#collabspace</span>
           <span>#confia</span>
-          <span>#LÁELE</span>
-          <span>#Tchaau</span>
         </Hashtags>
       </Content>
 
       <Interactions>
-        <InteractionsInfo>
+        <InteractionInfo>
           <CountReaction>
             <span>
               <ThumbsUp size={19} weight="bold" />
@@ -79,15 +77,16 @@ const Post: React.FC = () => {
           </CountReaction>
 
           <CountComment>
-            <span onClick={toggleCommentArea}>11 comentários</span>
+            <span onClick={toggleCommentArea}>7 comentários</span>
           </CountComment>
-        </InteractionsInfo>
+        </InteractionInfo>
 
         <InteractionAction>
           <ButtonAction>
             <ThumbsUp size={22} />
             Reagir
           </ButtonAction>
+
           <ButtonAction onClick={toggleCommentArea}>
             <ChatCircleText size={22} />
             Comentar
@@ -95,14 +94,11 @@ const Post: React.FC = () => {
         </InteractionAction>
       </Interactions>
 
-      <CommentArea commentArea={commentArea}>
+      <CommentArea $commentArea={commentArea}>
         <CommentForm>
-          <h1>Deixe seu cometário</h1>
+          <h1>Deixe seu comentário</h1>
 
-          <Inputarea
-            placeholder="Escreva seu comentário..."
-            rows={3}
-          ></Inputarea>
+          <InputArea rows={3} placeholder="Escreva seu comentário aqui ..." />
 
           <Button>Comentar</Button>
         </CommentForm>

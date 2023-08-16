@@ -1,6 +1,6 @@
 import { LogoRocket } from "../../assets/sources";
 
-import { Container } from "./style";
+import { Container } from "./styles";
 
 const Header: React.FC = () => {
   return (

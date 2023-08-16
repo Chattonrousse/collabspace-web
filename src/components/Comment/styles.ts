@@ -30,7 +30,7 @@ export const AuthorAndTime = styled.div`
   }
 
   time {
-    font-size: 0%.75rem;
+    font-size: 0.75rem;
     color: var(--zinc-500);
   }
 `;
