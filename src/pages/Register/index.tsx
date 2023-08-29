@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useState, useCallback, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import { createUser } from "../../services/users";
+import { useAuthentication } from "../../contexts/Authentication";
 
 import {
   Container,
@@ -16,6 +20,8 @@ import {
 } from "./styles";
 
 const Register: React.FC = () => {
+  const { handleLoggedEmail } = useAuthentication();
+
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -36,13 +42,51 @@ const Register: React.FC = () => {
     /(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
   );
 
-  const handleLogin = () => {
+  const handleLogin = useCallback(() => {
     navigate("/");
-  };
+  }, [navigate]);
+
+  const handleSubmit = useCallback(
+    async (e: FormEvent) => {
+      e.preventDefault();
+
+      try {
+        const { result, message, data } = await createUser({
+          name,
+          email,
+          confirmEmail,
+          password,
+          confirmPassword,
+          birthDate,
+        });
+
+        if (result === "success") {
+          if (data) {
+            toast.success(message);
+
+            handleLoggedEmail(data.email);
+            handleLogin();
+          }
+        }
+
+        if (result === "error") toast.error(message);
+      } catch (error) {}
+    },
+    [
+      birthDate,
+      confirmEmail,
+      confirmPassword,
+      email,
+      name,
+      password,
+      handleLogin,
+      handleLoggedEmail,
+    ],
+  );
 
   return (
     <Container>
-      <Form autoComplete="on">
+      <Form autoComplete="on" onSubmit={handleSubmit}>
         <h1>Cadastre-se</h1>
 
         {email && !isEmail && <ErrorAlert>O e-mail não é válido!</ErrorAlert>}

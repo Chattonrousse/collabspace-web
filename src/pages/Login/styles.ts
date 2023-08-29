@@ -53,10 +53,14 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 48px;
-  background: var(--emerald-600);
+  background: var(--zinc-600);
   color: var(--zinc-100);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
   padding: 0 1rem;
   margin-bottom: 1.5rem;

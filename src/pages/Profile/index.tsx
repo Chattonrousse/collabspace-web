@@ -1,30 +1,30 @@
 import LayoutDefault from "../../layouts/Default";
 
+import AvatarCircle from "../../components/AvatarCircle";
 import RequestFriend from "../../components/RequestFriend";
+import FriendCard from "../../components/FriendCard";
 
 import { Camera, PencilSimple, MapPin, Phone, Clock } from "phosphor-react";
 
 import {
+  Container,
   Content,
   Overview,
   UserBanner,
   Cover,
-  Avatar,
-  EditInfoButton,
+  EditCoverButton,
   UserInfo,
+  EditInfoButton,
   General,
-  Contact,
   Total,
-  Requests,
-  Container,
-  RequestList,
-  Sidebar,
+  Contact,
   Friends,
   FriendList,
   AreaFriendButton,
-  EditCoverButton,
+  Sidebar,
+  Requests,
+  RequestList,
 } from "./styles";
-import FriendCard from "../../components/friendCard";
 
 const Profile: React.FC = () => {
   return (
@@ -34,11 +34,17 @@ const Profile: React.FC = () => {
           <Overview>
             <UserBanner>
               <EditCoverButton>
-                <Camera size={24} weight="fill" />
+                <Camera size={22} weight="fill" />
               </EditCoverButton>
+
               <Cover src="https://cutewallpaper.org/29/dual-screen-mr-robot-wallpaper/247286624.jpg" />
 
-              <Avatar src="https://i.pinimg.com/736x/b7/65/02/b76502e936cd209b595bd7a537e74db4.jpg" />
+              <div>
+                <AvatarCircle
+                  size="192px"
+                  src="https://i.pinimg.com/736x/b7/65/02/b76502e936cd209b595bd7a537e74db4.jpg"
+                />
+              </div>
 
               <EditInfoButton>
                 <PencilSimple size={22} weight="bold" />
@@ -47,10 +53,10 @@ const Profile: React.FC = () => {
 
             <UserInfo>
               <General>
-                <h1>Gegeh Cândido</h1>
+                <h1>Natan Foleto</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Necessitatibus voluptate, hic nihil itaque natus suscipit.
+                  Você só vai me olhar, me julgar, tirar conclusões
+                  precipitadas, mas ainda… assim não vai me conhecer.
                 </p>
 
                 <Total>
@@ -68,13 +74,15 @@ const Profile: React.FC = () => {
                   <MapPin size={20} weight="bold" />
                   Jaborandi, São Paulo, Brasil
                 </span>
+
                 <span>
                   <Phone size={20} weight="bold" />
-                  (17) 991008354
+                  (17) 99242-4418
                 </span>
+
                 <span>
                   <Clock size={20} weight="bold" />
-                  Entrou em fevereiro de 2023
+                  Entrou em Fevereiro de 2023
                 </span>
               </Contact>
             </UserInfo>
@@ -82,6 +90,7 @@ const Profile: React.FC = () => {
 
           <Friends>
             <h1>Amigos</h1>
+
             <FriendList>
               <FriendCard />
               <FriendCard />
