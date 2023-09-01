@@ -30,7 +30,7 @@ const LogoRocket = ({ ...rest }) => (
   </svg>
 );
 
-const SpinerLogin = ({ ...rest }) => (
+const Spiner = ({ ...rest }) => (
   <svg
     width="24"
     height="24"
@@ -39,16 +39,16 @@ const SpinerLogin = ({ ...rest }) => (
     fill="#e4e4e7"
     {...rest}
   >
-    <circle cx="50" cy="50" r="40" stroke="#18181b" strokeWidth="8" fill="none">
+    <circle cx="50" cy="50" r="40" stroke="#e4e4e7" strokeWidth="8" fill="none">
       <animate
         attributeName="stroke-dasharray"
         from="0,251.32741228718345"
         to="251.32741228718345,0"
-        dur="1s"
+        dur="0.75s"
         repeatCount="indefinite"
       />
     </circle>
   </svg>
 );
 
-export { LogoRocket, SpinerLogin };
+export { LogoRocket, Spiner };

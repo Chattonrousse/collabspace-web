@@ -1,5 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-
 import { ToastContainer } from "react-toastify";
 
 import AppRoutes from "./routes";
@@ -15,7 +14,11 @@ function App() {
       <BrowserRouter>
         <AppRoutes />
 
-        <ToastContainer theme="dark" autoClose={3000} />
+        <ToastContainer
+          theme="dark"
+          autoClose={3000}
+          toastStyle={{ background: "#262626" }}
+        />
       </BrowserRouter>
     </AuthenticationProvider>
   );

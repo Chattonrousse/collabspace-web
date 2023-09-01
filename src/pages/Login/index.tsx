@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 import { useAuthentication } from "../../contexts/Authentication";
 
-import { SpinerLogin } from "../../assets/sources";
+import { Spiner } from "../../assets/sources";
 
 import {
   Container,
@@ -18,9 +18,9 @@ import {
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
-  const { signIn, loading } = useAuthentication();
+  const { signIn, loading, loggedEmail } = useAuthentication();
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(loggedEmail);
   const [password, setPassword] = useState("");
 
   const handleRegister = () => {
@@ -47,6 +47,7 @@ const Login: React.FC = () => {
             id="email"
             name="email"
             type="text"
+            value={email}
             placeholder="Digite seu e-mail"
             required
             onChange={(e) => {
@@ -61,6 +62,7 @@ const Login: React.FC = () => {
             id="password"
             name="password"
             type="password"
+            value={password}
             placeholder="Digite sua senha"
             required
             onChange={(e) => {
@@ -69,7 +71,7 @@ const Login: React.FC = () => {
           />
         </Group>
 
-        <Button>{loading ? <SpinerLogin /> : "Fazer Login"}</Button>
+        <Button>{loading ? <Spiner /> : "Fazer login"}</Button>
 
         <LinkRegister>
           <p>Novo no Collabspace?</p>

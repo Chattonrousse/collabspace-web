@@ -58,9 +58,9 @@ export const Button = styled.button`
   justify-content: center;
 
   height: 48px;
-  background: var(--zinc-600);
+  background: var(--emerald-600);
   color: var(--zinc-100);
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: bold;
   padding: 0 1rem;
   margin-bottom: 1.5rem;
