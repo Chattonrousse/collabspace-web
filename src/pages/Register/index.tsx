@@ -33,7 +33,7 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [loading, setlLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const areaEmail = !name || !birthDate;
   const areaPassword = !email || !confirmEmail || areaEmail;
@@ -54,7 +54,7 @@ const Register: React.FC = () => {
     async (e: FormEvent) => {
       e.preventDefault();
 
-      setlLoading(true);
+      setLoading(true);
 
       try {
         const { result, message, data } = await createUser({
@@ -77,10 +77,10 @@ const Register: React.FC = () => {
 
         if (result === "error") toast.error(message);
 
-        setlLoading(false);
+        setLoading(false);
       } catch (error: any) {
         toast.error(error.message);
-        setlLoading(false);
+        setLoading(false);
       }
     },
     [

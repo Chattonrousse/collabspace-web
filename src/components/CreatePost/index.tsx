@@ -1,42 +1,54 @@
 import { useState, useCallback, FormEvent } from "react";
 import { toast } from "react-toastify";
 
-import Avatar from "../AvatarSquare";
+import { useAuthentication } from "../../contexts/Authentication";
+
+import { createPost } from "../../services/posts";
+import { IPost } from "../../services/posts/types";
+
+import AvatarSquare from "../AvatarSquare";
 import InputArea from "../InputArea";
 import Button from "../Button";
 
-import { useAuthentication } from "../../contexts/Authentication";
-
 import { Container, Form } from "./styles";
-import { createPost } from "../../services/posts";
 
-const CreatePost: React.FC = () => {
-  const { user } = useAuthentication();
+interface CreatePostProps {
+  onCreatePost: (post: IPost) => void;
+}
+
+const CreatePost: React.FC<CreatePostProps> = ({ onCreatePost }) => {
+  const { user, me } = useAuthentication();
 
   const [content, setContent] = useState<string>("");
 
   const handleCreatePost = useCallback(
     async (e: FormEvent) => {
       e.preventDefault();
-      try {
-        const { result, message } = await createPost({ content });
 
-        if (result === "success") toast.success(message);
+      try {
+        const { result, message, data } = await createPost({ content });
+
+        if (result === "success") {
+          if (data) {
+            setContent("");
+            onCreatePost(data);
+            toast.success(message);
+          }
+        }
+
         if (result === "error") toast.error(message);
       } catch (error: any) {
         toast.error(error.message);
       }
     },
-    [content],
+    [content, onCreatePost],
   );
 
   return (
     <Container>
-      <Avatar
-        src={
-          user?.avatarUrl ||
-          "https://images-ext-1.discordapp.net/external/5hyJpFaJWGqRGEUP8osz0gM1MG5bIE37lqvs1RwdH6Q/https/i.imgur.com/HYrZqHy.jpg"
-        }
+      <AvatarSquare
+        onClick={() => me(user?.id)}
+        avatar={user?.avatarUrl}
         borderEffect
       />
 
@@ -51,6 +63,7 @@ const CreatePost: React.FC = () => {
             setContent(e.target.value);
           }}
         />
+
         <Button>Publicar</Button>
       </Form>
     </Container>

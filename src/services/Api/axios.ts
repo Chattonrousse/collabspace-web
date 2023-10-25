@@ -5,7 +5,7 @@ const getAPIClient = () => {
     baseURL: "http://localhost:3333",
     headers: {
       Authorization: `Bearer ${JSON.parse(
-        localStorage.getItem('"token') as string,
+        localStorage.getItem("token") as string,
       )}`,
     },
   });
